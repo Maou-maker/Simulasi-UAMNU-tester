@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Ujian UAMNU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #0e6676;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .sub-header {
+            background-color: #0e6676;
+            color: white;
+            font-size: 18px;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .button {
+            background-color: #00bfff;
+            border: 2px solid black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #009acd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Simulasi Ujian UAMNU</div>
+    <div class="sub-header">by : Dark_Sans</div>
+    <div class="container">
+        <a href="{{ url_for('aqidah') }}" class="button">Aqidah Akhlak</a>
+        <a href="{{ url_for('matematika') }}" class="button">Matematika</a>
+        <a href="{{ url_for('sosiologi') }}" class="button">Sosiologi</a>
+    </div>
+    <p>catatan : Sementara baru bisa akses Aqidah Akhlak terlebih dahulu.
+        sisanya menyusul</p>
+    </body>
+</html>

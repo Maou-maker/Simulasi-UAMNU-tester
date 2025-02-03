@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Aqidah Akhlak</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background-color: #00bfff;
+            border: 2px solid black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #009acd;
+        }
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+        .disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .wrong {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Ujian Aqidah Akhlak</h2>
+        <p id="timer">Sisa Waktu: 60:00</p>
+        <form id="quizForm">
+            <p>1. Kewajiban seorang anak setelah orang tuanya meninggal dunia belum selesai, hal ini dapat dilakukan dengan …...</p>
+            <label><input type="radio" name="q1" value="A"> A. Membaguskan makamnya</label><br>
+            <label><input type="radio" name="q1" value="B"> B. Mendoakannya</label><br>
+            <label><input type="radio" name="q1" value="C"> C. Membagi harta warisannya</label><br>
+            <label><input type="radio" name="q1" value="D"> D. Merawat harta peninggalannya</label><br>
+            <label><input type="radio" name="q1" value="E"> E. Mengenangnya</label><br>
+            <p id="result_q1"></p><br>
+
+            <p>2. “Janganlah kamu jadikan panggilan Rasul di antara kamu seperti panggilan sebahagian kamu kepada sebahagian (yang lain)” (An-Nur:64). Maksud kata di atas berkaitan dengan tugas Rasulullah SAW sebagai penyampai seperti halnya guru adalah …...</p>
+            <label><input type="radio" name="q2" value="A"> A. Panggilan terhadap guru berbeda dengan kawan sebaya</label><br>
+            <label><input type="radio" name="q2" value="B"> B. Panggilan yang baik</label><br>
+            <label><input type="radio" name="q2" value="C"> C. Panggilan dengan nama</label><br>
+            <label><input type="radio" name="q2" value="D"> D. Panggilan sopan</label><br>
+            <label><input type="radio" name="q2" value="E"> E. Panggilan dengan nasab</label><br>
+            <p id="result_q2"></p><br>
+
+            <p>3. Dari segi bahasa, asmaul husna berasal dari bahasa Arab, asma artinya nama dan Husna artinya …….</p>
+            <label><input type="radio" name="q3" value="A"> A. Paling baik</label><br>
+            <label><input type="radio" name="q3" value="B"> B. Mulia</label><br>
+            <label><input type="radio" name="q3" value="C"> C. Bijaksana</label><br>
+            <label><input type="radio" name="q3" value="D"> D. Agung</label><br>
+            <label><input type="radio" name="q3" value="E"> E. Berkuasa</label><br>
+            <p id="result_q3"></p><br>
+
+            <p>4. Di bawah ini merupakan cara meneladani sifat Al-Karim, adalah ……</p>
+            <label><input type="radio" name="q4" value="A"> A.	Memohon pertolongan hanya kepada Allah</label><br>
+            <label><input type="radio" name="q4" value="B"> B.	Dalam hidup harus berbuat adil </label><br>
+            <label><input type="radio" name="q4" value="C"> C.	Berbudi pekerti yang luhur</label><br>
+            <label><input type="radio" name="q4" value="D"> D.	Saling member rasa aman di masyarakat</label><br>
+            <label><input type="radio" name="q4" value="E"> E.	Menggantungkan diri hanya kepada Allah</label><br>
+            <p id="result_q4"></p><br>
+
+            <p>5. Keadilan Allah SWT meliputi segala hal, baik yang menyangkut urusan keduniaan maupun urusan akhirat dari para makhluk-Nya. Ini menunjukkan Allah memiliki nama…..</p>
+            <label><input type="radio" name="q5" value="A"> A. Al-Adl</label><br>
+            <label><input type="radio" name="q5" value="B"> B. Al-Nafi</label><br>
+            <label><input type="radio" name="q5" value="C"> C. Al-Akhir</label><br>
+            <label><input type="radio" name="q5" value="D"> D. al-Hafidz</label><br>
+            <label><input type="radio" name="q5" value="E"> E. Al-Basith</label><br>
+            <p id="result_q5"></p><br>
+
+            <p>6. Berhusnudzan terhadap diri sendiri akan dapat mewujudkan sikap ……</p>
+            <label><input type="radio" name="q6" value="A"> A. Rendah Diri</label><br>
+            <label><input type="radio" name="q6" value="B"> B. Sabar</label><br>
+            <label><input type="radio" name="q6" value="C"> C. Percaya Diri</label><br>
+            <label><input type="radio" name="q6" value="D"> D. Rendah Hati</label><br>
+            <label><input type="radio" name="q6" value="E"> E. Tinggi Hati</label><br>
+            <p id="result_q6"></p><br>
+
+            <p>7. 7. Allah SWT telah memberikan kepada manusia kemampuan kepada manusia untuk memilih dan berusaha, maka segala perbuatannya yang terjadi adalah atas pilihannya yang harus ……</p>
+            <label><input type="radio" name="q7" value="A"> A.	Diaktualkan dengan penuh kebebasan</label><br>
+            <label><input type="radio" name="q7" value="B"> B.	Diamalkan dengan penuh kepuasan</label><br>
+            <label><input type="radio" name="q7" value="C"> C.	Diimplementasikan sesuai dengan kesenangan</label><br>
+            <label><input type="radio" name="q7" value="D"> D.	Dipertanggung jawabkan di hadapan Allah</label><br>
+            <label><input type="radio" name="q7" value="E"> E.	Diseleksi menurut prioritas tujuan hidup</label><br>
+            <p id="result_q7"></p><br>
+
+            <p>8. Munculnya ketidakadilan di masyarakat dan merasa lebih baik dari orang lain, merupakan bahaya dari perbuatan …..</p>
+            <label><input type="radio" name="q8" value="A"> A.	Syirik</label><br>
+            <label><input type="radio" name="q8" value="B"> B.	Tamak</label><br>
+            <label><input type="radio" name="q8" value="C"> C.	Riya’</label><br>
+            <label><input type="radio" name="q8" value="D"> D.	Diskriminasi</label><br>
+            <label><input type="radio" name="q8" value="E"> E.	Dzalim</label><br>
+            <p id="result_q8"></p><br>
+
+            <p>9.	Ilmu yang membicarakan tentang wujud Allah, sifat-sifat wajib yang ada  bagiNya, sifat-sifat jaiz yang disifatkan bagiNya, dan sifat-sifat yang tidak ada bagiNya, juga membahas tentang rasul-rasul Allah untuk menetapkan kebenaran risalahnya,</p>
+            <p>apa yang wajib ada pada dirinya, hal-hal jaiz yang dihubungkan pada diri mereka, dan hal-hal yang terlarang yang dihubungkan kepada diri mereka, adalah defenisi ilmu kalam menurut…..</p>
+            <label><input type="radio" name="q9" value="A"> A.	Ibnu Khaldun</label><br>
+            <label><input type="radio" name="q9" value="B"> B.	Muhammad Abduh</label><br>
+            <label><input type="radio" name="q9" value="C"> C.	Al Mu’tashim</label><br>
+            <label><input type="radio" name="q9" value="D"> D.	Muhammad Abdul</label><br>
+            <label><input type="radio" name="q9" value="E"> E.	Muhammad Abdurrahman</label><br>
+            <p id="result_q9"></p><br>
+
+            <p>10.	Pada umumnya para ilmuwan menyamakan antara ilmu kalam dengan ilmu aqidah, ilmu ushuludin dan ilmu tauhid, dasar mereka adalah….</p>
+            <label><input type="radio" name="q10" value="A"> A.	Banyak membicarakan masalah kepercayaan dan dasar-dasar agama</label><br>
+            <label><input type="radio" name="q10" value="B"> B.	Banyak membicarakan politik dan kekhalifahan </label><br>
+            <label><input type="radio" name="q10" value="C"> C.	Banyak membicarakan sejarah turunnya Al Qur’an </label><br>
+            <label><input type="radio" name="q10" value="D"> D.	Banyak membicarakan tata cara beribadah kepada Allah</label><br>
+            <label><input type="radio" name="q10" value="E"> E.	Banyak membicarakan masalah sosial keagamaan </label><br>
+            <p id="result_q10"></p><br>
+
+            <p>11.	Ketika khalifah Utsman bin Affan (23-35 H) menjadi khalifah, beliau melakukan perubahan system administrasi pemerintahannya yang lebih cenderung nepotisme, timbul kekacauan politik yang mencapai klimaksnya pada masa pemerintahan  Ali bin Abi Thalib, sehingga terjadi perang saudara dan mengakibatkan umat Islam terpecah belah. </p>
+            <p>Perpecahan politik ini menimbulkan akibat munculnya… </p>
+            <label><input type="radio" name="q11" value="A"> A.	Aliran Murji’ah</label><br>
+            <label><input type="radio" name="q11" value="B"> B.	Golongan orang-orang yang menjadikan nabi Isa sebagai Tuhan</label><br>
+            <label><input type="radio" name="q11" value="C"> C.	Berbagai pemikiran teologi/ ilmu kalam</label><br>
+            <label><input type="radio" name="q11" value="D"> D.	Para ahli ilmu kalam </label><br>
+            <label><input type="radio" name="q11" value="E"> E.	Kelompok Islam tertentu</label><br>
+            <p id="result_q11"></p><br>
+
+            <p>12.	Awal munculnya aliran Khawarij di latar belakangi oleh Sikap berani dalam membela kebenaran dan juga karena adanya …..</p>
+            <label><input type="radio" name="q12" value="A"> A.	Perdebatan antara Amr bin Ash dengan Abu Musa Al Asy’ari</label><br>
+            <label><input type="radio" name="q12" value="B"> B.	Ketidak puasan atas putusan Ali bin Abi Thalib untuk berdamai dengan Mu’awiyah pada perang Siffin</label><br>
+            <label><input type="radio" name="q12" value="C"> C.	Aliran Qadariyah</label><br>
+            <label><input type="radio" name="q12" value="D"> D.	Jawaban c benar</label><br>
+            <label><input type="radio" name="q12" value="E"> E.	Jawaban b benar</label><br>
+            <p id="result_q12"></p><br>
+
+            <p>13.	Karena keraguan Al Asyari dari aliran Mu’tazilah yang semula beliau anut, kemudian keluar dan membuat aliran Ahlussunnah Waljama’ah yang pemikiran kalamnya banyak dianut  masyarakat banyak hal ini karena Ahlussunnah Waljamaah pemikirannya berdasarkan…..</p>
+            <label><input type="radio" name="q13" value="A"> A.	Banyak membicarakan masalah kepercayaan dan dasar-dasar agama</label><br>
+            <label><input type="radio" name="q13" value="B"> B.	Banyak membicarakan politik dan kekhalifahan </label><br>
+            <label><input type="radio" name="q13" value="C"> C.	Banyak membicarakan sejarah turunnya Al Qur’an </label><br>
+            <label><input type="radio" name="q13" value="D"> D.	Banyak membicarakan tata cara beribadah kepada Allah</label><br>
+            <label><input type="radio" name="q13" value="E"> E.	Banyak membicarakan masalah sosial keagamaan </label><br>
+            <p id="result_q13"></p><br>
+
+            <p>14. Ayat di bawah menjadi dasar atau pedoman dalam hal…
+            <p>يآبَنِيْ آدَمَ قَدْ اَنْزَلْنَا عَلَيْكُمْ لِبَاساً يُّوَارِيْ سَوْآتِكُمْ وَرِيْشاً وَلِبَاسُ التَّقْوَى ذاَلِكَ خَيْرٌ
+                ذاَلِكَ مِنْ آياَتِ اللهِ لَعَلَّهُمْ يَذَّكَّرُوْنَ
+                </p>
+            <label><input type="radio" name="q14" value="A"> A.	Pentingnya pakaian taqwa</label><br>
+            <label><input type="radio" name="q14" value="B"> B.	Berpakaian itu harus sopan </label><br>
+            <label><input type="radio" name="q14" value="C"> C.	Berpakaian harus mewah</label><br>
+            <label><input type="radio" name="q14" value="D"> D.	Berpakaian harus sederhana</label><br>
+            <label><input type="radio" name="q14" value="E"> E.	Berpakaian mengikuti mode</label><br>
+            <p id="result_q14"></p><br>
+
+            <p>15. Ayat di bawah berhubungan dengan perintah Allah …..</p>
+            <p>يآيُّهَا النَّبِيُّ قُلْ لِاَزْوَاجِكَ وَبَنَاتِكَ وَنِسَآءِ الْمُؤْمِنِيْنَ يُدْنِيْنَ عَلَيْهِنَّ مِنْ جَلَابِيْبِهِنَّ...</p>
+            <label><input type="radio" name="q15" value="A"> A.	Berpakaian yang sederhana dan tidak berlebihan</label><br>
+            <label><input type="radio" name="q15" value="B"> B.	Berpaian yang sopan bila hendak menjalankan tugas</label><br>
+            <label><input type="radio" name="q15" value="C"> C.	Berpakaian yang baik ketika bepergian</label><br>
+            <label><input type="radio" name="q15" value="D"> A.	Berpakaian yang baik ketika bepergian</label><br>
+            <label><input type="radio" name="q15" value="E"> E.	Perintah menggunakan jilbab sampai menutupi seluruh bagian tubuh kecuali muka dan telapak tangan </label><br>
+            <p id="result_q15"></p><br>
+
+            <p>16.	Sebelum anda memasuki rumah seseorang walaupun saudara sendiri maupun keluarga dekat, hendaklah yang kamu lakukan terlebih dahulu yaitu….</p>
+            <label><input type="radio" name="q16" value="A"> A.	Meminta izin dan mengucap tahmid</label><br>
+            <label><input type="radio" name="q16" value="B"> B.	Meminta izin dan mengucap takbir</label><br>
+            <label><input type="radio" name="q16" value="C"> C.	Meminta izin dan mengucapkan salam</label><br>
+            <label><input type="radio" name="q16" value="D"> D.	Meminta izin dan mengucap tasbih</label><br>
+            <label><input type="radio" name="q16" value="E"> E.	Meminta izin dan mengucap basmalah</label><br>
+            <p id="result_q16"></p><br>
+
+            <p>17.	Orang yang bermain catur bisa jatuh dalam perjudian bila dalam permaian tersebut …..</p>
+            <label><input type="radio" name="q17" value="A"> A.	Dengan perjanjian yang kalah membelikan teh botol pada yang menang</label><br>
+            <label><input type="radio" name="q17" value="B"> B.	Yang kalah tidak mau mengakui kekalahannya</label><br>
+            <label><input type="radio" name="q17" value="C"> C.	Yang kalah tidak rela dengan kekalahannya</label><br>
+            <label><input type="radio" name="q17" value="D"> D.	Kalau yang menang minta dibelikan teh botol yang sebelumnya bermain tidak ada perjanjian</label><br>
+            <label><input type="radio" name="q17" value="E"> E.	Yang kalah rela membelikan teh botol pada yang menang</label><br>
+            <p id="result_q17"></p><br>
+
+            <p>18.	Tasawuf  yang lebih mengutamakan beribadah, agar seseorang memperoleh penghayatan spiritual dalam setiap melakukan ibadah disebut ……</p>
+            <label><input type="radio" name="q18" value="A"> A.	Tasawuf qauli</label><br>
+            <label><input type="radio" name="q18" value="B"> B.	Tasawuf falsafi</label><br>
+            <label><input type="radio" name="q18" value="C"> C.	Tasawuf akhlaki</label><br>
+            <label><input type="radio" name="q18" value="D"> D.	Tasawuf amali</label><br>
+            <label><input type="radio" name="q18" value="E"> E.	Tasawuf modern</label><br>
+            <p id="result_q18"></p><br>
+
+            <p>19.	Meninggalkan segala yang ada di dalamnya terdapat keragu-raguan antara halal dan haram (syubhat) dalam kajian tasawuf, disebut dengan …..</p>
+            <label><input type="radio" name="q19" value="A"> A.	Rida</label><br>
+            <label><input type="radio" name="q19" value="B"> B.	Banyak membicarakan politik dan kekhalifahan </label><br>
+            <label><input type="radio" name="q19" value="C"> B.	Zuhud</label><br>
+            <label><input type="radio" name="q19" value="D"> D.	Sabar</label><br>
+            <label><input type="radio" name="q19" value="E"> E.	Tawakal</label><br>
+            <p id="result_q19"></p><br>
+
+            <p>20.	Salah satu usaha yang positif  bagi remaja dalam bergaul adalah memilih teman yang …..</p>
+            <label><input type="radio" name="q20" value="A"> A.	Mudah dimintai bantuan</label><br>
+            <label><input type="radio" name="q20" value="B"> B.	Berakhlak mulia</label><br>
+            <label><input type="radio" name="q20" value="C"> C.	Mempunyai pergaulan bebas</label><br>
+            <label><input type="radio" name="q20" value="D"> D.	Yang enak diajak bicara</label><br>
+            <label><input type="radio" name="q20" value="E"> E.	Mudah beradaptasi</label><br>
+            <p id="result_q20"></p><br>
+
+            <p>21.	Persaudaraan merupakan salah satu perilaku terpuji dalam pergaulan remaja. Persaudaraan antar sesama manusia apapun agama, bangsa dan sukunya dikenal dengan istilah ….. </p>
+            <label><input type="radio" name="q21" value="A"> A.	Ukhuwah insaniyah</label><br>
+            <label><input type="radio" name="q21" value="B"> B.	Ukhuwah islamiyah</label><br>
+            <label><input type="radio" name="q21" value="C"> C.	Ukhuwah wathaniyah</label><br>
+            <label><input type="radio" name="q21" value="D"> D.	Ukhuwah nasabiyah</label><br>
+            <label><input type="radio" name="q21" value="E"> E.	Ukhuwah su’ubiyah</label><br>
+            <p id="result_q21"></p><br>
+
+            <p>22.	Sikap tenggang rasa dan menghormati dengan sesama dalam masyarakat sebagai bentuk toleransi sosial kemasyarakatan, dalam ajaran Islam disebut dengan istilah…. </p>
+            <label><input type="radio" name="q22" value="A"> A.	Sikap ta’awun </label><br>
+            <label><input type="radio" name="q22" value="B"> B.	Sikap takaful</label><br>
+            <label><input type="radio" name="q22" value="C"> C.	Sikap tasamuh</label><br>
+            <label><input type="radio" name="q22" value="D"> D.	Sikap ta’aruf</label><br>
+            <label><input type="radio" name="q22" value="E"> E.	Sikap tausiyah</label><br>
+            <p id="result_q22"></p><br>
+
+            <p>23.	Islam melarang orang berlebihan atau melampaui batas dalam ibadah sunnah, karena ibadah yang melampaui batas dapat menimbulkan sikap …..</p>
+            <label><input type="radio" name="q23" value="A"> A.	Kebohongan yang berakibat meninggalkan yang lebih utama.</label><br>
+            <label><input type="radio" name="q23" value="B"> B.	Kejenuhan yang berakibat malas beribadah.</label><br>
+            <label><input type="radio" name="q23" value="C"> C.	Kebosanan yang berakibat meninggalkan ibadah yang lebih utama.</label><br>
+            <label><input type="radio" name="q23" value="D"> D.	Kegagalan dalam melaksanakan ibadah yang utama.</label><br>
+            <label><input type="radio" name="q23" value="E"> E.	Kekusukan yang berakibat lebih dekat dengan Tuhan-Nya</label><br>
+            <p id="result_q23"></p><br>
+
+            <p>24.	Orang-orang yang boros di dalam membelanjakan hartanya dinyatakan oleh Allah sebagai saudara syetan, mereka akan menerima akibat yaitu …..</p>
+            <label><input type="radio" name="q24" value="A"> A.	Mengalami kesusahan di dunia dan mendapat pahala Allah di akhirat</label><br>
+            <label><input type="radio" name="q24" value="B"> B.	Mengalami kesenangan di dunia dan mendapat siksa Allah di akhirat</label><br>
+            <label><input type="radio" name="q24" value="C"> C.	Mengalami kesuksesan di dunia dan akan mendapat pahala Allah di akhirat</label><br>
+            <label><input type="radio" name="q24" value="D"> D.	Mengalami kesusahan di dunia dan mendapat murka Allah di akhirat</label><br>
+            <label><input type="radio" name="q24" value="E"> E.	Mengalami kegoncangan di dunia dan kesengsaraan dahsyat di akhirat</label><br>
+            <p id="result_q24"></p><br>
+
+            <p>25.	Takziah merupakan mau’izah (nasihat) bagi pelaku takziyah, yaitu agar selalu mengingat ….</p>
+            <label><input type="radio" name="q25" value="A"> A.	Kesehatan dan bersiap-siap mencari jalan hidup di akhirat</label><br>
+            <label><input type="radio" name="q25" value="B"> B.	Keselamatan dan bersiap-siap mencari modal hidup di akhirat</label><br>
+            <label><input type="radio" name="q25" value="C"> C.	Kematian dan bersiap-siap mencari bekal hidup di akhirat</label><br>
+            <label><input type="radio" name="q25" value="D"> A.	Kehidupan dan bersiap-siap mencari bekal hidup di akhirat</label><br>
+            <label><input type="radio" name="q25" value="E"> E.	Kesialan dan bersiap-siap mencari nikmat hidup di akhirat</label><br>
+            <p id="result_q25"></p><br>
+
+            <p>26.	Dalam kehidupan sosial ekonomi, sosok yang ditampilkan  Abdurrahman bin Auf adalah seorang sahabat yang dikenal sebagai ….</p>
+            <label><input type="radio" name="q26" value="A"> A.	Seorang pekerja yang selalu sukses</label><br>
+            <label><input type="radio" name="q26" value="B"> B.	Seorang yang sangat dermawan membelanjakan seluruh harta</label><br>
+            <label><input type="radio" name="q26" value="C"> C.	Seorang yang ulet menjalankan usahanya</label><br>
+            <label><input type="radio" name="q26" value="D"> D.	Seorang yang serius menjalankan pekerjaan</label><br>
+            <label><input type="radio" name="q26" value="E"> E.	Seorang pekerja keras yang jujur</label><br>
+            <p id="result_q26"></p><br>
+
+            <p>27.	Dalam Asmaul Husna ada yang disebut AL-Malik artinya Yang Maha….. </p>
+            <label><input type="radio" name="q27" value="A"> A.	Pemberi rizki</label><br>
+            <label><input type="radio" name="q27" value="B"> B.	Menutupi </label><br>
+            <label><input type="radio" name="q27" value="C"> C.	Pengasih</label><br>
+            <label><input type="radio" name="q27" value="D"> D.	Penguasa </label><br>
+            <label><input type="radio" name="q27" value="E"> E.	Pengampum</label><br>
+            <p id="result_q27"></p><br>
+
+            <p>28.	Suatu sikap yang menunjukkan  rasa persaudaraan kebangsaan disebut juga….</p>
+            <label><input type="radio" name="q28" value="A"> A.	Ukhuwah islamiyah</label><br>
+            <label><input type="radio" name="q28" value="B"> B.	Ukhuwah</label><br>
+            <label><input type="radio" name="q28" value="C"> C.	Ukhuwah wathaniah</label><br>
+            <label><input type="radio" name="q28" value="D"> D.	Ukhuwah insaniyah</label><br>
+            <label><input type="radio" name="q28" value="E"> E.	Semua salah</label><br>
+            <p id="result_q28"></p><br>
+
+            <p>29.	Nifaq adalah adalah suatu sifat yang dimiliki oleh seseorang yang diujudkan dalam bentuk …..</p>
+            <label><input type="radio" name="q29" value="A"> A.	Menyembunyikan kejahatan</label><br>
+            <label><input type="radio" name="q29" value="B"> B.	Menampakkan kebaikan</label><br>
+            <label><input type="radio" name="q29" value="C"> C.	Tampak baik namun dihati ingkar</label><br>
+            <label><input type="radio" name="q29" value="D"> D.	Baik sangka pada orang lain</label><br>
+            <label><input type="radio" name="q29" value="E"> E.	Buruk sangka pada orang lain</label><br>
+            <p id="result_q29"></p><br>
+
+            <p>30.	Ghadab adalah suatu sifat yang dimiliki oleh seseorang yang yang tercermin dalam bentuk perbuatan / perkataan …..</p>
+            <label><input type="radio" name="q30" value="A"> A.	Keras hati/ marah   </label><br>
+            <label><input type="radio" name="q30" value="B"> B.	Baik/lembut</label><br>
+            <label><input type="radio" name="q30" value="C"> C.	Angkuh/sombong </label><br>
+            <label><input type="radio" name="q30" value="D"> D.	Keras/ kasar</label><br>
+            <label><input type="radio" name="q30" value="E"> E.	Semua benar</label><br>
+            <p id="result_q30"></p><br>
+
+            <p>31.	Adab bergaul antara orang lebih tua dengan yang lebih muda  hendaknya dilakukan dengan cara…..</p>
+            <label><input type="radio" name="q31" value="A"> A.	Meminta pertolongan</label><br>
+            <label><input type="radio" name="q31" value="B"> B.	Memberi nasehat dengan bijak</label><br>
+            <label><input type="radio" name="q31" value="C"> C.	Selalu menyuruhnya</label><br>
+            <label><input type="radio" name="q31" value="D"> D.	Bersaing dengan nya</label><br>
+            <label><input type="radio" name="q31" value="E"> E.	Meminta petunjuknya</label><br>
+            <p id="result_q31"></p><br>
+
+            <p>32.	Al Ghazali adalah seorang tokoh Islam yang dikenal sebagai…..</p>
+            <label><input type="radio" name="q32" value="A"> A.	Ahli nujum                 </label><br>
+            <label><input type="radio" name="q32" value="B"> B.	Ahli pengobatan   </label><br>
+            <label><input type="radio" name="q32" value="C"> C.	Ahli nujum dan tasawuf</label><br>
+            <label><input type="radio" name="q32" value="D"> D.	Ahli filsafat dan tasawuf </label><br>
+            <label><input type="radio" name="q32" value="E"> E.	Ahli Agama dan filsafat</label><br>
+            <p id="result_q32"></p><br>
+
+            <p>33.	Kalimat fastabiqul-khairat memiliki rarti…..</p>
+            <label><input type="radio" name="q33" value="A"> A.	Menangilah suatu perlombaan</label><br>
+            <label><input type="radio" name="q33" value="B"> B.	Berlomba itu wajib</label><br>
+            <label><input type="radio" name="q33" value="C"> C.	Berlombalah dalam kebaikan</label><br>
+            <label><input type="radio" name="q33" value="D"> D.	Jangan suka berlomba</label><br>
+            <label><input type="radio" name="q33" value="E"> E.	Anjuran dalam berloma</label><br>
+            <p id="result_q33"></p><br>
+
+            <p>34.	Ciri-ciri orang yang bersikap dinamis adalah….</p>
+            <label><input type="radio" name="q34" value="A"> A.	Berfikir progresif   </label><br>
+            <label><input type="radio" name="q34" value="B"> B.	Bekerja ikhlas        </label><br>
+            <label><input type="radio" name="q34" value="C"> C.	Sabar dalam cobaan</label><br>
+            <label><input type="radio" name="q34" value="D"> D.	Berfikir futuristik </label><br>
+            <label><input type="radio" name="q34" value="E"> E.	Semua benar </label><br>
+            <p id="result_q34"></p><br>
+
+            <p>35.	Suatu perbuatan menjelekkan orang lain tampa menunjukkan bukti   yang pasti disebut…..</p>
+            <label><input type="radio" name="q35" value="A"> A.	Bohong   </label><br>
+            <label><input type="radio" name="q35" value="B"> B.	Gibah                    </label><br>
+            <label><input type="radio" name="q35" value="C"> C.	Fitnah </label><br>
+            <label><input type="radio" name="q35" value="D"> D.	Musawwah </label><br>
+            <label><input type="radio" name="q35" value="E"> E.	Nifak</label><br>
+            <p id="result_q35"></p><br>
+
+            <p>36.	Suatu akhlak yang tidak baik dan kita harus menghindarinya salah satunya adalah Namimah artinya…</p>
+            <label><input type="radio" name="q36" value="A"> A.	Munafik   </label><br>
+            <label><input type="radio" name="q36" value="B"> B.	Gibah  </label><br>
+            <label><input type="radio" name="q36" value="C"> C.	Fitnah </label><br>
+            <label><input type="radio" name="q36" value="D"> D.	Mengadu domba </label><br>
+            <label><input type="radio" name="q36" value="E"> E.	Nifak </label><br>
+            <p id="result_q36"></p><br>
+
+            <p>37.	Ghibah  adalah suatu perbuatan yang diujudkan dalam bentuk….</p>
+            <label><input type="radio" name="q37" value="A"> A.	Memfitnah orang lain</label><br>
+            <label><input type="radio" name="q37" value="B"> B.	Mengadu domba     </label><br>
+            <label><input type="radio" name="q37" value="C"> C.	Berkata keras/ kasar</label><br>
+            <label><input type="radio" name="q37" value="D"> D.	Bergunjing</label><br>
+            <label><input type="radio" name="q37" value="E"> E.	Semuanya salah</label><br>
+            <p id="result_q37"></p><br>
+
+            <p>38.	Dibawah ini adab berdoa kecuali….</p>
+            <label><input type="radio" name="q38" value="A"> A.	Menghadap kiblat</label><br>
+            <label><input type="radio" name="q38" value="B"> B.	Melirihkan suara</label><br>
+            <label><input type="radio" name="q38" value="C"> C.	Tunduk dan khusuk</label><br>
+            <label><input type="radio" name="q38" value="D"> D.	Mensucikan bathin</label><br>
+            <label><input type="radio" name="q38" value="E"> E. Minta segera dikabulkan</label><br>
+            <p id="result_q38"></p><br>
+
+            <p>39.	Ibnu Rusyd lahir di…..</p>
+            <label><input type="radio" name="q39" value="A"> A.	Sialkot India</label><br>
+            <label><input type="radio" name="q39" value="B"> B.	Kota Kordoba Spanyol</label><br>
+            <label><input type="radio" name="q39" value="C"> C.	Persia</label><br>
+            <label><input type="radio" name="q39" value="D"> D.	Uzbekistan</label><br>
+            <label><input type="radio" name="q39" value="E"> E.	Mesir</label><br>
+            <p id="result_q39"></p><br>
+
+            <p>40.	Muhammad Iqbal adalah seorang….</p>
+            <label><input type="radio" name="q40" value="A"> A.	Pelukis handal</label><br>
+            <label><input type="radio" name="q40" value="B"> B.	Penyair dan filosof</label><br>
+            <label><input type="radio" name="q40" value="C"> C.	Ahli pengobatan</label><br>
+            <label><input type="radio" name="q40" value="D"> D.	Penghafal Alquran</label><br>
+            <label><input type="radio" name="q40" value="E"> E.	Dermawan</label><br>
+            <p id="result_q40"></p><br>
+
+
+            <button class="button disabled" type="submit" id="submitButton" disabled>Submit Jawaban</button>
+        </form>
+        <p id="score"></p>
+        <a href="{{ url_for('index') }}" class="button">Kembali ke Beranda</a>
+    </div>
+
+    <script>
+        let timeLeft = 3600;
+        let timerElement = document.getElementById("timer");
+        let submitButton = document.getElementById("submitButton");
+
+        function updateTimer() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            timerElement.textContent = "Sisa Waktu: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert("Waktu habis! Jawaban akan dikoreksi.");
+                document.getElementById("quizForm").submit();
+            }
+        }
+
+        setTimeout(updateTimer, 1000);
+
+        function checkAllAnswered() {
+            let allAnswered = true;
+            let totalQuestions = 40;
+            for (let i = 1; i <= totalQuestions; i++) {
+                let answered = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!answered) {
+                    allAnswered = false;
+                    break;
+                }
+            }
+            if (allAnswered) {
+                submitButton.disabled = false;
+                submitButton.classList.remove("disabled");
+            } else {
+                submitButton.disabled = true;
+                submitButton.classList.add("disabled");
+            }
+        }
+
+        document.querySelectorAll("input[type='radio']").forEach(input => {
+            input.addEventListener("change", checkAllAnswered);
+        });
+
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let correctAnswers = {
+                q1: "B",
+                q2: "B",
+                q3: "A",
+                q4: "B",
+                q5: "A",
+                q6: "D",
+                q7: "D",
+                q8: "D",
+                q9: "B",
+                q10: "A",
+                q11: "C",
+                q12: "B",
+                q13: "D",
+                q14: "A",
+                q15: "E",
+                q16: "C",
+                q17: "A",
+                q18: "D",
+                q19: "C",
+                q20: "B",
+                q21: "A",
+                q22: "C",
+                q23: "B",
+                q24: "D",
+                q25: "C",
+                q26: "E",
+                q27: "D",
+                q28: "C",
+                q29: "C",
+                q30: "A",
+                q31: "B",
+                q32: "D",
+                q33: "C",
+                q34: "A",
+                q35: "C",
+                q36: "D",
+                q37: "D",
+                q38: "D",
+                q39: "B",
+                q40: "B"
+
+            };
+            let score = 0;
+
+            for (let key in correctAnswers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                let resultElement = document.getElementById(`result_${key}`);
+
+                if (selected) {
+                    if (selected.value === correctAnswers[key]) {
+                        score += 2.5;
+                        resultElement.innerHTML = "✔ Benar";
+                        resultElement.className = "correct";
+                    } else {
+                        resultElement.innerHTML = `✘ Salah, Jawaban Benar: ${correctAnswers[key]}`;
+                        resultElement.className = "wrong";
+                    }
+                }
+            }
+
+            document.getElementById("score").innerHTML = `<strong>Skor Anda: ${score} dari 100</strong>`;
+        });
+    </script>
+</body>
+</html>

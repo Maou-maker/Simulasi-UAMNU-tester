@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Matematika</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background-color: #00bfff;
+            border: 2px solid black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #009acd;
+        }
+        .button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Ujian Matematika</h2>
+        <p id="timer">Sisa Waktu: 90:00</p>
+        <form id="quizForm">
+            <p>1. Koordinat titik balik grafik fungsi kuadrat y = x² - 4x + 5 adalah?</p>
+            <label><input type="radio" name="q1" value="A"> A. (2,1)</label><br>
+            <label><input type="radio" name="q1" value="B"> B. (2,-1)</label><br>
+            <label><input type="radio" name="q1" value="C"> C. (-2,1)</label><br>
+            <label><input type="radio" name="q1" value="D"> D. (-2,-1)</label><br>
+            <label><input type="radio" name="q1" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q1"></p><br>
+            
+            <p>2. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q2" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q2" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q2" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q2" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q2" value="E"> E. y=-x^2+2x+4</label><br><br>
+            <p id="result_q2"></p><br>
+           
+            <p>3. Diketahui fungsi f dan g yang dirumuskan olehf(x)=2x-3 dan gof(x)=2x+1. Maka rumus fungsi g(x)  adalah….</p>
+            <label><input type="radio" name="q3" value="A"> A. 2x+3</label><br>
+            <label><input type="radio" name="q3" value="B"> B. x+3</label><br>
+            <label><input type="radio" name="q3" value="C"> C. 2x-3</label><br>
+            <label><input type="radio" name="q3" value="D"> D. 2x-1</label><br>
+            <label><input type="radio" name="q1" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q3"></p><br>
+           
+            <p>4. Fungsi  f:R→R  ditentukan oleh 
+                f(x)=(2x-2)/(1+3x)
+                Rumus f^(-1) (x) adalah…
+                </p>
+            <label><input type="radio" name="q4" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q4" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q4" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q4" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q4" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q4"></p><br>
+           
+            <p>5. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q5" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q5" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q5" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q5" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q5" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q5"></p><br>
+           
+            <p>6. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q6" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q6" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q6" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q6" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q6" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q6"></p><br>
+           
+            <p>7. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q7" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q7" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q7" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q7" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q7" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q7"></p><br>
+           
+            <p>8. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q8" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q8" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q8" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q8" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q8" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q8"></p><br>
+           
+            <p>9. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q9" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q9" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q9" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q9" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q9" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q9"></p><br>
+
+            <p>10. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q10" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q10" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q10" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q10" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q10" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q10"></p><br>
+           
+            <p>11. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q11" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q11" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q11" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q11" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q11" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q11"></p><br>
+           
+            <p>12. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q12" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q12" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q12" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q12" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q12" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q12"></p><br>
+           
+            <p>13. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q13" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q13" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q13" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q13" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q13" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q13"></p><br>
+           
+            <p>14. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q14" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q14" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q14" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q14" value="D"> D. (-1,2)</label><br><br>
+            <label><input type="radio" name="q14" value="E"> E. y=x^2-2x-4</label><br>
+            <p id="result_q14"></p><br>
+           
+            <p>15. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q15" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q15" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q15" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q15" value="D"> D. (-1,2)</label><br><br>
+            <label><input type="radio" name="q15" value="E"> E. y=x^2-2x-4</label><br>
+            <p id="result_q15"></p><br>
+           
+            <p>16. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q16" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q16" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q16" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q16" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q16" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q16"></p><br>
+           
+            <p>17. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q17" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q17" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q17" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q17" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q17" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q17"></p><br>
+           
+            <p>18. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q18" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q18" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q18" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q18" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q18" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q18"></p><br>
+           
+            <p>19. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q19" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q19" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q19" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q19" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q19" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q19"></p><br>
+           
+            <p>20. Persamaan fungsi kuadrat yang titik puncaknya (1,2) dan melalui (0 , 4) adalah…</p>
+            <label><input type="radio" name="q20" value="A"> A. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q20" value="B"> B. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q20" value="C"> C. y=x^2+2x-4</label><br>
+            <label><input type="radio" name="q20" value="D"> D. y=x^2-2x-4</label><br>
+            <label><input type="radio" name="q20" value="E"> E. (-1,2)</label><br><br>
+            <p id="result_q20"></p><br>
+           
+
+            <button class="button" type="submit" id="submitBtn" disabled>Submit Jawaban</button>
+        </form>
+        <p id="score"></p>
+        <a href="{{ url_for('index') }}" class="button">Kembali ke Beranda</a>
+    </div>
+
+    <script>
+        let timeLeft = 5400; // 90 menit dalam detik
+        let timerElement = document.getElementById("timer");
+
+        function updateTimer() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            timerElement.textContent = "Sisa Waktu: " + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert("Waktu habis! Jawaban akan dikoreksi.");
+                document.getElementById("quizForm").submit();
+            }
+        }
+        setTimeout(updateTimer, 1000);
+
+        let correctAnswers = {
+            q1: "A",
+            q2: "B",
+            q3: "A",
+            q4: "E",
+            q5: "C",
+            q6: "A",
+            q7: "E",
+            q8: "A",
+            q9: "B",
+            q10: "D",
+            q11: "B",
+            q12: "E",
+            q13: "A",
+            q14: "E",
+            q15: "B",
+            q16: "A",
+            q17: "E",
+            q18: "B",
+            q19: "A",
+            q20: "C",
+            q21: "A",
+            q22: "A",
+            q23: "C",
+            q24: "C",
+            q25: "E",
+            q26: "C",
+            q27: "D",
+            q28: "E",
+            q29: "C",
+            q30: "C",
+            q31: "B",
+            q32: "B",
+            q33: "C",
+            q34: "E",
+            q35: "E",
+            q36: "D",
+            q37: "A",
+            q38: "C",
+            q39: "C",
+            q40: "E"
+            
+        };
+
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+            let resultText = "<h3>Hasil Ujian:</h3>";
+
+            for (let key in correctAnswers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                if (selected) {
+                    if (selected.value === correctAnswers[key]) {
+                        score += 2.5;
+                        resultText += `<p style="color:green;">${key}: Benar ✅</p>`;
+                    } else {
+                        resultText += `<p style="color:red;">${key}: Salah ❌ (Jawaban benar: ${correctAnswers[key]})</p>`;
+                    }
+                }
+            }
+            document.getElementById("score").innerHTML = `<strong>Skor Anda: ${score} dari ${totalQuestions * 2.5}</strong><br>` + resultText;
+        });
+
+        function checkCompletion() {
+            let allAnswered = true;
+            for (let key in correctAnswers) {
+                if (!document.querySelector(`input[name="${key}"]:checked`)) {
+                    allAnswered = false;
+                    break;
+                }
+            }
+            document.getElementById("submitBtn").disabled = !allAnswered;
+        }
+
+        document.querySelectorAll("input[type=radio]").forEach(input => {
+            input.addEventListener("change", checkCompletion);
+        });
+    </script>
+</body>
+</html>
